@@ -1,0 +1,36 @@
+2019-02-27T21:57:04: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROMproducts' at line 1
+2019-02-27T21:57:33: 
+2019-02-27T21:59:18: 
+2019-02-27T22:05:42: 
+2019-02-27T22:05:42: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\'43-7559\', \'strings of code\', \'16\')' at line 1
+2019-02-27T22:07:21: 
+2019-02-27T22:07:21: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\'43-7559\', \'strings of code\', \'16\')' at line 1
+2019-02-27T22:08:10: 
+2019-02-27T22:08:10: Unknown column '43-7559' in 'field list'
+2019-02-27T22:10:51: 
+2019-02-27T22:10:51: Unknown column '43-7559' in 'field list'
+2019-02-27T22:11:42: 
+2019-02-27T22:11:42: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '&quot;43-7559&quot;, &quot;strings of code&quot;, &quot;16&quot;)' at line 1
+2019-02-27T22:15:54: 
+2019-02-27T22:15:54: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '()\n  (article, name, price) \nVALUES\n  (() \n  , ()\n  , ())' at line 1
+2019-02-27T22:16:28: 
+2019-02-27T22:16:28: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '() (article, name, price) \nVALUES\n  (() \n  , ()\n  , ())' at line 1
+2019-02-27T22:16:59: 
+2019-02-27T22:16:59: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\nVALUES\n  (() \n  , ()\n  , ())' at line 1
+2019-02-27T22:17:39: 
+2019-02-27T22:17:39: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\nVALUES\n  (`()` \n  , `()`\n  , `()`)' at line 1
+2019-02-27T22:18:14: 
+2019-02-27T22:18:14: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\nVALUES (`()`, `()`, `()`)' at line 1
+2019-02-27T22:18:35: 
+2019-02-27T22:18:35: Table 'shop.()' doesn't exist
+2019-02-27T22:20:41: 
+2019-02-27T22:20:41: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '() (article, name, price) VALUES ((), (), ())' at line 1
+2019-02-27T22:22:10: 
+2019-02-27T22:22:10: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\'43-7559\', \'strings of code\', \'16\')' at line 1
+2019-02-27T22:22:41: 
+2019-02-27T22:22:41: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\'43-7559\', \'strings of code\', \'16\')' at line 1
+2019-02-27T22:24:57: 
+2019-02-27T22:27:01: 
+2019-02-27T22:27:01: 
+2019-02-27T22:30:24: 
+2019-02-27T22:30:24: 

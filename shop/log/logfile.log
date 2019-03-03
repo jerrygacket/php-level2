@@ -34,3 +34,149 @@
 2019-02-27T22:27:01: 
 2019-02-27T22:30:24: 
 2019-02-27T22:30:24: 
+2019-03-03T01:16:53: Twig_Error_Loader: Unable to find template ".tpl" (looked into: ../templates). in /var/www/shop/libs/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:234
+Stack trace:
+#0 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('.tpl')
+#1 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('.tpl')
+#2 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('.tpl')
+#3 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(289): Twig_Environment->loadTemplate('.tpl')
+#4 /var/www/shop/engine/classes/PageGenerator.php(62): Twig_Environment->render('.tpl', Array)
+#5 /var/www/shop/public/index.php(14): PageGenerator->buildPage()
+#6 {main}
+2019-03-03T01:18:47: Twig_Error_Loader: Unable to find template ".tpl" (looked into: ../templates). in /var/www/shop/libs/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:234
+Stack trace:
+#0 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('.tpl')
+#1 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('.tpl')
+#2 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('.tpl')
+#3 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(289): Twig_Environment->loadTemplate('.tpl')
+#4 /var/www/shop/engine/classes/PageGenerator.php(62): Twig_Environment->render('.tpl', Array)
+#5 /var/www/shop/public/index.php(14): PageGenerator->buildPage()
+#6 {main}
+2019-03-03T01:19:27: Twig_Error_Loader: Unable to find template ".tpl" (looked into: ../templates). in /var/www/shop/libs/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:234
+Stack trace:
+#0 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('.tpl')
+#1 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('.tpl')
+#2 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('.tpl')
+#3 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(289): Twig_Environment->loadTemplate('.tpl')
+#4 /var/www/shop/engine/classes/PageGenerator.php(63): Twig_Environment->render('.tpl', Array)
+#5 /var/www/shop/public/index.php(14): PageGenerator->buildPage()
+#6 {main}
+2019-03-03T01:26:33: Twig_Error_Loader: Unable to find template ".tpl" (looked into: ../templates). in /var/www/shop/libs/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:234
+Stack trace:
+#0 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('.tpl')
+#1 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('.tpl')
+#2 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('.tpl')
+#3 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(289): Twig_Environment->loadTemplate('.tpl')
+#4 /var/www/shop/engine/classes/PageGenerator.php(63): Twig_Environment->render('.tpl', Array)
+#5 /var/www/shop/public/index.php(14): PageGenerator->buildPage()
+#6 {main}
+2019-03-03T01:26:42: Twig_Error_Loader: Unable to find template ".tpl" (looked into: ../templates). in /var/www/shop/libs/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:234
+Stack trace:
+#0 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('.tpl')
+#1 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('.tpl')
+#2 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('.tpl')
+#3 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(289): Twig_Environment->loadTemplate('.tpl')
+#4 /var/www/shop/engine/classes/PageGenerator.php(62): Twig_Environment->render('.tpl', Array)
+#5 /var/www/shop/public/index.php(14): PageGenerator->buildPage()
+#6 {main}
+2019-03-03T01:27:06: Twig_Error_Loader: Unable to find template ".tpl" (looked into: ../templates). in /var/www/shop/libs/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:234
+Stack trace:
+#0 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('.tpl')
+#1 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('.tpl')
+#2 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('.tpl')
+#3 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(289): Twig_Environment->loadTemplate('.tpl')
+#4 /var/www/shop/engine/classes/PageGenerator.php(62): Twig_Environment->render('.tpl', Array)
+#5 /var/www/shop/public/index.php(14): PageGenerator->buildPage()
+#6 {main}
+2019-03-03T01:28:27: Twig_Error_Loader: Unable to find template ".tpl" (looked into: ../templates). in /var/www/shop/libs/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:234
+Stack trace:
+#0 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('.tpl')
+#1 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('.tpl')
+#2 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('.tpl')
+#3 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(289): Twig_Environment->loadTemplate('.tpl')
+#4 /var/www/shop/engine/classes/PageGenerator.php(63): Twig_Environment->render('.tpl', Array)
+#5 /var/www/shop/public/index.php(14): PageGenerator->buildPage()
+#6 {main}
+2019-03-03T01:40:15: Нет сниппета для Array
+2019-03-03T01:40:15: Twig_Error_Loader: Unable to find template "contacts.tpl" (looked into: ../templates). in /var/www/shop/libs/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:234
+Stack trace:
+#0 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('contacts.tpl')
+#1 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('contacts.tpl')
+#2 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('contacts.tpl')
+#3 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(289): Twig_Environment->loadTemplate('contacts.tpl')
+#4 /var/www/shop/engine/classes/PageGenerator.php(63): Twig_Environment->render('contacts.tpl', Array)
+#5 /var/www/shop/public/index.php(14): PageGenerator->buildPage()
+#6 {main}
+2019-03-03T01:40:32: Нет сниппета для Array
+2019-03-03T01:40:42: Нет сниппета для Array
+2019-03-03T01:40:42: Twig_Error_Loader: Unable to find template "contacts.tpl" (looked into: ../templates). in /var/www/shop/libs/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:234
+Stack trace:
+#0 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('contacts.tpl')
+#1 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('contacts.tpl')
+#2 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('contacts.tpl')
+#3 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(289): Twig_Environment->loadTemplate('contacts.tpl')
+#4 /var/www/shop/engine/classes/PageGenerator.php(63): Twig_Environment->render('contacts.tpl', Array)
+#5 /var/www/shop/public/index.php(14): PageGenerator->buildPage()
+#6 {main}
+2019-03-03T01:42:02: Нет сниппета для ресурса index
+2019-03-03T01:42:23: Нет сниппета для ресурса index
+2019-03-03T01:43:10: Нет сниппета для ресурса contacts
+2019-03-03T01:43:10: Twig_Error_Loader: Unable to find template "contacts.tpl" (looked into: ../templates). in /var/www/shop/libs/vendor/twig/twig/lib/Twig/Loader/Filesystem.php:234
+Stack trace:
+#0 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('contacts.tpl')
+#1 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('contacts.tpl')
+#2 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('contacts.tpl')
+#3 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(289): Twig_Environment->loadTemplate('contacts.tpl')
+#4 /var/www/shop/engine/classes/PageGenerator.php(62): Twig_Environment->render('contacts.tpl', Array)
+#5 /var/www/shop/public/index.php(14): PageGenerator->buildPage()
+#6 {main}
+2019-03-03T01:44:21: Нет сниппета для ресурса contacts
+2019-03-03T10:29:21: Twig_Error_Loader: Unable to find template "gallery.row.html" (looked into: ../templates). in /var/www/shop/templates/gallery.tpl:9
+Stack trace:
+#0 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('gallery.row.htm...')
+#1 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('gallery.row.htm...')
+#2 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('gallery.row.htm...')
+#3 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(482): Twig_Environment->loadTemplate('gallery.row.htm...')
+#4 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Extension/Core.php(1333): Twig_Environment->resolveTemplate(Array)
+#5 /var/www/shop/templates/cache/5a/5a2de90d18fa0a88013bac9aff376e1c768996438e6ef2e0e44ab7a3eb0ca3f9.php(59): twig_include(Object(Twig_Environment), Array, 'gallery.row.htm...')
+#6 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Template.php(386): __TwigTemplate_d738238c9a32337f2a6e149db811b06ac5ed60fc4bdf081abed76e993d74617a->doDisplay(Array, Array)
+#7 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Template.php(363): Twig_Template->displayWithErrorHandling(Array, Array)
+#8 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Template.php(371): Twig_Template->display(Array)
+#9 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(289): Twig_Template->render(Array)
+#10 /var/www/shop/engine/classes/PageGenerator.php(62): Twig_Environment->render('gallery.tpl', Array)
+#11 /var/www/shop/public/index.php(14): PageGenerator->buildPage()
+#12 {main}
+2019-03-03T10:30:04: Twig_Error_Loader: Unable to find template "gallery.row.html" (looked into: ../templates). in /var/www/shop/templates/gallery.tpl:9
+Stack trace:
+#0 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Loader/Filesystem.php(143): Twig_Loader_Filesystem->findTemplate('gallery.row.htm...')
+#1 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(270): Twig_Loader_Filesystem->getCacheKey('gallery.row.htm...')
+#2 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(350): Twig_Environment->getTemplateClass('gallery.row.htm...')
+#3 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(482): Twig_Environment->loadTemplate('gallery.row.htm...')
+#4 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Extension/Core.php(1333): Twig_Environment->resolveTemplate(Array)
+#5 /var/www/shop/templates/cache/5a/5a2de90d18fa0a88013bac9aff376e1c768996438e6ef2e0e44ab7a3eb0ca3f9.php(59): twig_include(Object(Twig_Environment), Array, 'gallery.row.htm...')
+#6 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Template.php(386): __TwigTemplate_d738238c9a32337f2a6e149db811b06ac5ed60fc4bdf081abed76e993d74617a->doDisplay(Array, Array)
+#7 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Template.php(363): Twig_Template->displayWithErrorHandling(Array, Array)
+#8 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Template.php(371): Twig_Template->display(Array)
+#9 /var/www/shop/libs/vendor/twig/twig/lib/Twig/Environment.php(289): Twig_Template->render(Array)
+#10 /var/www/shop/engine/classes/PageGenerator.php(62): Twig_Environment->render('gallery.tpl', Array)
+#11 /var/www/shop/public/index.php(14): PageGenerator->buildPage()
+#12 {main}
+2019-03-03T11:52:44: Ошибка обработки запроса.
+Запрос: SELECT * FROM  ORDER BY views DESC
+Ошибка: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY views DESC' at line 1
+2019-03-03T11:56:03: Ошибка обработки запроса.
+Запрос: SELECT * FROM notable ORDER BY views DESC
+Ошибка: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'shop.notable' doesn't exist
+2019-03-03T11:56:32:    Ошибка обработки запроса.
+Запрос: SELECT * FROM notable ORDER BY views DESC
+Ошибка: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'shop.notable' doesn't exist
+2019-03-03T11:56:58: 	Ошибка обработки запроса.
+Запрос: SELECT * FROM notable ORDER BY views DESC
+Ошибка: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'shop.notable' doesn't exist
+2019-03-03T11:58:05: Ошибка обработки запроса.
+	Запрос: SELECT * FROM notable ORDER BY views DESC 
+ 	Ошибка: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'shop.notable' doesn't exist
+2019-03-03T13:09:33: Ошибка преобразования.
+	Ошибка: SQLSTATE[HY000]: General error
+2019-03-03T13:09:52: Ошибка преобразования.
+	Ошибка: SQLSTATE[HY000]: General error

@@ -34,15 +34,30 @@ class Logger
 
     private function setLogFile() {
         if ($this->handler !== null) {
-            fclose($this->handler);
+            try {
+                fclose($this->handler);
+            } catch (Exception $e) {
+                echo 'error close log file: ' . $e;
+            }
         }
-        $this->handler = fopen($this->logFile, 'a');
+
+        $logDir = dirname($this->logFile);
+        if (is_dir($logDir)) {
+            try {
+                $this->handler = fopen($this->logFile, 'a');
+            } catch (Exception $e) {
+                echo 'error open log file: ' . $e;
+            }
+        }
     }
 
     public function writeLog($message) {
         $logTime = date('Y-m-d\TH:i:s');
         $logString = $logTime . ': ' . $message . PHP_EOL;
-        if (!fwrite($this->handler, $logString)) {
+        try {
+            fwrite($this->handler, $logString);
+        } catch (Exception $e) {
+            echo 'error write to log file: ' . $e;
             return false;
         }
 

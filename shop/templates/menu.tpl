@@ -31,6 +31,11 @@
 						</a>
 					</li>
 					<li class="nav-item">
+						<a class="nav-link" href="/catalog">
+							Каталог
+						</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link" href="/contacts">
 							Контакты
 						</a>

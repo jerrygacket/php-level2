@@ -13,10 +13,7 @@ class PageGenerator extends BaseObj
         parent::__construct($uri);
 
         // init twig
-        $loader = new \Twig\Loader\FilesystemLoader(TPL_DIR);
-        $this->twig = new \Twig\Environment($loader, [
-            'cache' => (CACHE_DIR ?? 'cache'),
-        ]);
+        $this->twig = TplGenerator::getTpl(TPL_DIR, CACHE_DIR);
     }
 
     public function buildPage() {
@@ -94,7 +91,7 @@ class PageGenerator extends BaseObj
     }
 
     private function getItems($itemsTable) {
-        $sql = 'SELECT * FROM ' . $itemsTable . ' ORDER BY views DESC';
+        $sql = 'SELECT * FROM ' . $itemsTable . ' ORDER BY views DESC LIMIT 3';
 
         return $this->queryDb($sql, $itemsTable);
     }

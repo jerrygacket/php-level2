@@ -59,14 +59,19 @@ class __TwigTemplate_34c81c8a2b3fca24ed08d1bece5af3ef8adf173b48fb28e653ca873748e
 \t\t\t\t\t\t</a>
 \t\t\t\t\t</li>
 \t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t<a class=\"nav-link\" href=\"/catalog\">
+\t\t\t\t\t\t\tКаталог
+\t\t\t\t\t\t</a>
+\t\t\t\t\t</li>
+\t\t\t\t\t<li class=\"nav-item\">
 \t\t\t\t\t\t<a class=\"nav-link\" href=\"/contacts\">
 \t\t\t\t\t\t\tКонтакты
 \t\t\t\t\t\t</a>
 \t\t\t\t\t</li>
 \t\t\t\t\t";
-        // line 38
+        // line 43
         if ((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["login"] ?? null), "userpage", [])) > 0)) {
-            // line 39
+            // line 44
             echo "\t\t\t\t\t\t<li class=\"nav-item\">
 \t\t\t\t\t\t\t<a class=\"nav-link\" href=\"/cabinet\">
 \t\t\t\t\t\t\t\tКабинет
@@ -79,14 +84,14 @@ class __TwigTemplate_34c81c8a2b3fca24ed08d1bece5af3ef8adf173b48fb28e653ca873748e
 \t\t\t\t\t\t</li>
 \t\t\t\t\t";
         }
-        // line 50
+        // line 55
         echo "\t\t\t\t\t<li class=\"nav-item\">
 \t\t\t\t\t\t<a class=\"nav-link\" href=\"/";
-        // line 51
+        // line 56
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["login"] ?? null), "link", []), "html", null, true);
         echo "\">
 \t\t\t\t\t\t\t";
-        // line 52
+        // line 57
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["login"] ?? null), "text", []), "html", null, true);
         echo "
 \t\t\t\t\t\t</a>
@@ -111,7 +116,7 @@ class __TwigTemplate_34c81c8a2b3fca24ed08d1bece5af3ef8adf173b48fb28e653ca873748e
 
     public function getDebugInfo()
     {
-        return array (  90 => 52,  86 => 51,  83 => 50,  70 => 39,  68 => 38,  51 => 24,  28 => 4,  23 => 1,);
+        return array (  95 => 57,  91 => 56,  88 => 55,  75 => 44,  73 => 43,  51 => 24,  28 => 4,  23 => 1,);
     }
 
     public function getSourceContext()

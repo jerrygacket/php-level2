@@ -14,7 +14,7 @@ define('WWW_ROOT', SITE_ROOT . 'public');
 define('TPL_DIR', SITE_ROOT . 'templates');
 define('CACHE_DIR', TPL_DIR . $ds . 'cache');
 define('LOG_FILE', SITE_ROOT . 'log' . $ds . 'logfile.log');
-define('SNIPPET_DIR', ENG_DIR . $ds . 'snippets');
+define('ACTION_DIR', ENG_DIR . $ds . 'actions');
 //define('DATA_DIR', SITE_ROOT . 'data');
 
 // include external libs (twig, etc.)

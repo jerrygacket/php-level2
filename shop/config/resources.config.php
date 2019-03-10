@@ -22,6 +22,14 @@ return [
         'chunk' => 'gallery.tpl',
         'itemsTable' => 'gallery'
     ],
+    'catalog' => [
+        'name' => 'catalog',
+        'title' => 'Каталог',
+        'description' => 'Каталог товаров',
+        'snippet' => 'catalog.php',
+        'chunk' => 'catalog.tpl',
+        'itemsTable' => 'products'
+    ],
     'contacts' => [
         'name' => 'contacts',
         'title' => 'Контакты',

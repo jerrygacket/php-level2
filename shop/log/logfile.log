@@ -180,3 +180,640 @@ Stack trace:
 	Ошибка: SQLSTATE[HY000]: General error
 2019-03-03T13:09:52: Ошибка преобразования.
 	Ошибка: SQLSTATE[HY000]: General error
+2019-03-05T23:40:54: SELECT * FROM products ORDER BY views DESC
+2019-03-05T23:41:51: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [name] => Подушка декоративная большая
+            [img] => products/product1/product1.jpg
+            [imgsmall] => products/product1/small/product1.jpg
+            [imgbig] => products/product1/big/product1.jpg
+            [intro] => Краткое описание Подушки декоративной большой
+            [description] => Мягкий лен Lorem ipsum dolor sit amet. Лебяжий пух Lorem ipsum dolor sit amet.
+            [size] => 60х60 см
+            [fabricid] => 1
+            [paintid] => 1
+            [views] => 73
+            [price] => 100
+            [status] => удален
+            [article] => 
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [name] => Подушка декоративная маленькая
+            [img] => products/product2/product2.jpg
+            [imgsmall] => products/product2/small/product2.jpg
+            [imgbig] => products/product2/big/product2.jpg
+            [intro] => Краткое описание Подушки декоративной маленькой
+            [description] => Мягкий лен Lorem ipsum dolor sit amet. Лебяжий пух Lorem ipsum dolor sit amet.
+            [size] => 30х30 см
+            [fabricid] => 1
+            [paintid] => 1
+            [views] => 18
+            [price] => 54
+            [status] => 
+            [article] => 
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [name] => Подушка декоративная прямоугольная
+            [img] => products/product3/product3.jpg
+            [imgsmall] => products/product3/small/product3.jpg
+            [imgbig] => products/product3/big/product3.jpg
+            [intro] => Краткое описание Подушки декоративной прямоугольной
+            [description] => Мягкий лен Lorem ipsum dolor sit amet. Лебяжий пух Lorem ipsum dolor sit amet.
+            [size] => 30х90 см
+            [fabricid] => 2
+            [paintid] => 1
+            [views] => 3
+            [price] => 75
+            [status] => 
+            [article] => 
+        )
+
+    [3] => Array
+        (
+            [id] => 4
+            [name] => strings of code
+            [img] => 
+            [imgsmall] => 
+            [imgbig] => 
+            [intro] => 
+            [description] => 
+            [size] => 
+            [fabricid] => 0
+            [paintid] => 0
+            [views] => 0
+            [price] => 16
+            [status] => 
+            [article] => 43-7559
+        )
+
+    [4] => Array
+        (
+            [id] => 5
+            [name] => test strings
+            [img] => 
+            [imgsmall] => 
+            [imgbig] => 
+            [intro] => 
+            [description] => 
+            [size] => 
+            [fabricid] => 0
+            [paintid] => 0
+            [views] => 0
+            [price] => 0
+            [status] => 
+            [article] => 
+        )
+
+    [5] => Array
+        (
+            [id] => 6
+            [name] => little soft pillow
+            [img] => 
+            [imgsmall] => 
+            [imgbig] => 
+            [intro] => 
+            [description] => 
+            [size] => 
+            [fabricid] => 0
+            [paintid] => 0
+            [views] => 0
+            [price] => 56
+            [status] => 
+            [article] => 45-7889
+        )
+
+)
+
+2019-03-05T23:42:25: Array
+(
+    [0] => Array
+        (
+            [id] => 3
+            [filepath] => img/product2.jpg
+            [filesize] => 29602
+            [name] => Большая подушка
+            [views] => 21
+            [description] => Описание большой подушки
+        )
+
+    [1] => Array
+        (
+            [id] => 5
+            [filepath] => img/product3.jpg
+            [filesize] => 15057
+            [name] => Прямоугольная подушка
+            [views] => 17
+            [description] => Описание прямоугольной подушки
+        )
+
+    [2] => Array
+        (
+            [id] => 1
+            [filepath] => img/product1.jpg
+            [filesize] => 30213
+            [name] => Маленькая подушка
+            [views] => 5
+            [description] => Описание маленькой декоративной подушки
+        )
+
+    [3] => Array
+        (
+            [id] => 10
+            [filepath] => img/bd4bd7efa8a9143cfd709aaa336c1286.jpg
+            [filesize] => 60890
+            [name] => другая картинка
+            [views] => 2
+            [description] => другое описание
+        )
+
+    [4] => Array
+        (
+            [id] => 8
+            [filepath] => img/empty.jpg
+            [filesize] => 0
+            [name] => название картинки
+            [views] => 1
+            [description] => пустая картинка
+        )
+
+)
+
+2019-03-05T23:43:16: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [name] => Подушка декоративная большая
+            [img] => products/product1/product1.jpg
+            [imgsmall] => products/product1/small/product1.jpg
+            [imgbig] => products/product1/big/product1.jpg
+            [intro] => Краткое описание Подушки декоративной большой
+            [description] => Мягкий лен Lorem ipsum dolor sit amet. Лебяжий пух Lorem ipsum dolor sit amet.
+            [size] => 60х60 см
+            [fabricid] => 1
+            [paintid] => 1
+            [views] => 73
+            [price] => 100
+            [status] => удален
+            [article] => 
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [name] => Подушка декоративная маленькая
+            [img] => products/product2/product2.jpg
+            [imgsmall] => products/product2/small/product2.jpg
+            [imgbig] => products/product2/big/product2.jpg
+            [intro] => Краткое описание Подушки декоративной маленькой
+            [description] => Мягкий лен Lorem ipsum dolor sit amet. Лебяжий пух Lorem ipsum dolor sit amet.
+            [size] => 30х30 см
+            [fabricid] => 1
+            [paintid] => 1
+            [views] => 18
+            [price] => 54
+            [status] => 
+            [article] => 
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [name] => Подушка декоративная прямоугольная
+            [img] => products/product3/product3.jpg
+            [imgsmall] => products/product3/small/product3.jpg
+            [imgbig] => products/product3/big/product3.jpg
+            [intro] => Краткое описание Подушки декоративной прямоугольной
+            [description] => Мягкий лен Lorem ipsum dolor sit amet. Лебяжий пух Lorem ipsum dolor sit amet.
+            [size] => 30х90 см
+            [fabricid] => 2
+            [paintid] => 1
+            [views] => 3
+            [price] => 75
+            [status] => 
+            [article] => 
+        )
+
+    [3] => Array
+        (
+            [id] => 4
+            [name] => strings of code
+            [img] => 
+            [imgsmall] => 
+            [imgbig] => 
+            [intro] => 
+            [description] => 
+            [size] => 
+            [fabricid] => 0
+            [paintid] => 0
+            [views] => 0
+            [price] => 16
+            [status] => 
+            [article] => 43-7559
+        )
+
+    [4] => Array
+        (
+            [id] => 5
+            [name] => test strings
+            [img] => 
+            [imgsmall] => 
+            [imgbig] => 
+            [intro] => 
+            [description] => 
+            [size] => 
+            [fabricid] => 0
+            [paintid] => 0
+            [views] => 0
+            [price] => 0
+            [status] => 
+            [article] => 
+        )
+
+    [5] => Array
+        (
+            [id] => 6
+            [name] => little soft pillow
+            [img] => 
+            [imgsmall] => 
+            [imgbig] => 
+            [intro] => 
+            [description] => 
+            [size] => 
+            [fabricid] => 0
+            [paintid] => 0
+            [views] => 0
+            [price] => 56
+            [status] => 
+            [article] => 45-7889
+        )
+
+)
+
+2019-03-05T23:53:09: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [name] => Подушка декоративная большая
+            [img] => products/product1/product1.jpg
+            [imgsmall] => products/product1/small/product1.jpg
+            [imgbig] => products/product1/big/product1.jpg
+            [intro] => Краткое описание Подушки декоративной большой
+            [description] => Мягкий лен Lorem ipsum dolor sit amet. Лебяжий пух Lorem ipsum dolor sit amet.
+            [size] => 60х60 см
+            [fabricid] => 1
+            [paintid] => 1
+            [views] => 73
+            [price] => 100
+            [status] => удален
+            [article] => 
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [name] => Подушка декоративная маленькая
+            [img] => products/product2/product2.jpg
+            [imgsmall] => products/product2/small/product2.jpg
+            [imgbig] => products/product2/big/product2.jpg
+            [intro] => Краткое описание Подушки декоративной маленькой
+            [description] => Мягкий лен Lorem ipsum dolor sit amet. Лебяжий пух Lorem ipsum dolor sit amet.
+            [size] => 30х30 см
+            [fabricid] => 1
+            [paintid] => 1
+            [views] => 18
+            [price] => 54
+            [status] => 
+            [article] => 
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [name] => Подушка декоративная прямоугольная
+            [img] => products/product3/product3.jpg
+            [imgsmall] => products/product3/small/product3.jpg
+            [imgbig] => products/product3/big/product3.jpg
+            [intro] => Краткое описание Подушки декоративной прямоугольной
+            [description] => Мягкий лен Lorem ipsum dolor sit amet. Лебяжий пух Lorem ipsum dolor sit amet.
+            [size] => 30х90 см
+            [fabricid] => 2
+            [paintid] => 1
+            [views] => 3
+            [price] => 75
+            [status] => 
+            [article] => 
+        )
+
+    [3] => Array
+        (
+            [id] => 4
+            [name] => strings of code
+            [img] => 
+            [imgsmall] => 
+            [imgbig] => 
+            [intro] => 
+            [description] => 
+            [size] => 
+            [fabricid] => 0
+            [paintid] => 0
+            [views] => 0
+            [price] => 16
+            [status] => 
+            [article] => 43-7559
+        )
+
+    [4] => Array
+        (
+            [id] => 5
+            [name] => test strings
+            [img] => 
+            [imgsmall] => 
+            [imgbig] => 
+            [intro] => 
+            [description] => 
+            [size] => 
+            [fabricid] => 0
+            [paintid] => 0
+            [views] => 0
+            [price] => 0
+            [status] => 
+            [article] => 
+        )
+
+    [5] => Array
+        (
+            [id] => 6
+            [name] => little soft pillow
+            [img] => 
+            [imgsmall] => 
+            [imgbig] => 
+            [intro] => 
+            [description] => 
+            [size] => 
+            [fabricid] => 0
+            [paintid] => 0
+            [views] => 0
+            [price] => 56
+            [status] => 
+            [article] => 45-7889
+        )
+
+)
+
+2019-03-05T23:56:59: getMoreGoods
+2019-03-05T23:57:52: getMoreGoods
+2019-03-06T00:01:15: Ошибка обработки запроса.
+	Запрос: SELECT * FROM products WHERE id >= [object HTMLDivElement] LIMIT  
+ 	Ошибка: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '[object HTMLDivElement] LIMIT' at line 1
+2019-03-06T00:01:15: Array
+(
+)
+
+2019-03-06T00:02:13: Ошибка обработки запроса.
+	Запрос: SELECT * FROM products WHERE id >= 3 LIMIT  
+ 	Ошибка: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+2019-03-06T00:02:13: Array
+(
+)
+
+2019-03-06T00:03:24: Array
+(
+    [0] => Array
+        (
+            [id] => 3
+            [name] => Подушка декоративная прямоугольная
+            [img] => products/product3/product3.jpg
+            [imgsmall] => products/product3/small/product3.jpg
+            [imgbig] => products/product3/big/product3.jpg
+            [intro] => Краткое описание Подушки декоративной прямоугольной
+            [description] => Мягкий лен Lorem ipsum dolor sit amet. Лебяжий пух Lorem ipsum dolor sit amet.
+            [size] => 30х90 см
+            [fabricid] => 2
+            [paintid] => 1
+            [views] => 3
+            [price] => 75
+            [status] => 
+            [article] => 
+        )
+
+    [1] => Array
+        (
+            [id] => 4
+            [name] => strings of code
+            [img] => 
+            [imgsmall] => 
+            [imgbig] => 
+            [intro] => 
+            [description] => 
+            [size] => 
+            [fabricid] => 0
+            [paintid] => 0
+            [views] => 0
+            [price] => 16
+            [status] => 
+            [article] => 43-7559
+        )
+
+    [2] => Array
+        (
+            [id] => 5
+            [name] => test strings
+            [img] => 
+            [imgsmall] => 
+            [imgbig] => 
+            [intro] => 
+            [description] => 
+            [size] => 
+            [fabricid] => 0
+            [paintid] => 0
+            [views] => 0
+            [price] => 0
+            [status] => 
+            [article] => 
+        )
+
+    [3] => Array
+        (
+            [id] => 6
+            [name] => little soft pillow
+            [img] => 
+            [imgsmall] => 
+            [imgbig] => 
+            [intro] => 
+            [description] => 
+            [size] => 
+            [fabricid] => 0
+            [paintid] => 0
+            [views] => 0
+            [price] => 56
+            [status] => 
+            [article] => 45-7889
+        )
+
+)
+
+2019-03-06T00:03:56: Array
+(
+    [0] => Array
+        (
+            [id] => 4
+            [name] => strings of code
+            [img] => 
+            [imgsmall] => 
+            [imgbig] => 
+            [intro] => 
+            [description] => 
+            [size] => 
+            [fabricid] => 0
+            [paintid] => 0
+            [views] => 0
+            [price] => 16
+            [status] => 
+            [article] => 43-7559
+        )
+
+    [1] => Array
+        (
+            [id] => 5
+            [name] => test strings
+            [img] => 
+            [imgsmall] => 
+            [imgbig] => 
+            [intro] => 
+            [description] => 
+            [size] => 
+            [fabricid] => 0
+            [paintid] => 0
+            [views] => 0
+            [price] => 0
+            [status] => 
+            [article] => 
+        )
+
+    [2] => Array
+        (
+            [id] => 6
+            [name] => little soft pillow
+            [img] => 
+            [imgsmall] => 
+            [imgbig] => 
+            [intro] => 
+            [description] => 
+            [size] => 
+            [fabricid] => 0
+            [paintid] => 0
+            [views] => 0
+            [price] => 56
+            [status] => 
+            [article] => 45-7889
+        )
+
+)
+
+2019-03-06T00:22:05: Array
+(
+    [0] => Array
+        (
+            [id] => 4
+            [name] => strings of code
+            [img] => 
+            [imgsmall] => 
+            [imgbig] => 
+            [intro] => 
+            [description] => 
+            [size] => 
+            [fabricid] => 0
+            [paintid] => 0
+            [views] => 0
+            [price] => 16
+            [status] => 
+            [article] => 43-7559
+        )
+
+    [1] => Array
+        (
+            [id] => 5
+            [name] => test strings
+            [img] => 
+            [imgsmall] => 
+            [imgbig] => 
+            [intro] => 
+            [description] => 
+            [size] => 
+            [fabricid] => 0
+            [paintid] => 0
+            [views] => 0
+            [price] => 0
+            [status] => 
+            [article] => 
+        )
+
+    [2] => Array
+        (
+            [id] => 6
+            [name] => little soft pillow
+            [img] => 
+            [imgsmall] => 
+            [imgbig] => 
+            [intro] => 
+            [description] => 
+            [size] => 
+            [fabricid] => 0
+            [paintid] => 0
+            [views] => 0
+            [price] => 56
+            [status] => 
+            [article] => 45-7889
+        )
+
+)
+
+2019-03-06T00:31:56: нет такой функции getmoregoods
+2019-03-06T00:32:18: нет такой функции getMoreGoods
+2019-03-06T00:50:25: 1
+2019-03-06T00:50:42: Array
+(
+    [action] => getMoreGoods
+    [id_product] => 4
+    [quantity] => 3
+)
+
+2019-03-06T00:51:21: Array
+(
+    [action] => getMoreGoods
+    [id_product] => 5
+    [quantity] => 3
+)
+
+2019-03-06T00:51:21: 1
+2019-03-06T00:53:02: Array
+(
+    [action] => getMoreGoods
+    [id_product] => 3
+    [quantity] => 3
+)
+
+2019-03-06T00:53:02: 1
+2019-03-06T00:53:09: Array
+(
+    [action] => getMoreGoods
+    [id_product] => 6
+    [quantity] => 3
+)
+2019-03-06T21:47:12: Ошибка обработки запроса.
+	Запрос: INSERT INTO `products` (`name`, `img`, `intro`, `description`, `price`, `article`) VALUES (prod15,img/path,"some intro text", "description", 100, "00115") 
+ 	Ошибка: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'prod15' in 'field list'
+2019-03-06T21:47:13: Ошибка обработки запроса.
+	Запрос: INSERT INTO `products` (`name`, `img`, `intro`, `description`, `price`, `article`) VALUES (prod15,img/path,"some intro text", "description", 100, "00115") 
+ 	Ошибка: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'prod15' in 'field list'

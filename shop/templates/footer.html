@@ -1,0 +1,16 @@
+{% if login %}
+    <h3>Просмотренные страницы</h3>
+    {% if pages %}
+    <ul>
+        {% for page in pages %}
+        <li><a href="{{ page }}">{{ page }}</a> </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>Нет страниц</p>
+    {% endif %}
+{% else %}
+<h3>Вход не выполнен, просмотренные страницы не сохраняются</h3>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,6 @@
+<h1>Controls</h1>
+<ul>
+    {%for k, control in content_data.controls%}
+    <li><a href="/admin/?action=control&id={{k}}">{{control}}</a></li>
+    {%endfor%}
+</ul>

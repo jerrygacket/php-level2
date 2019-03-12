@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+    </head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="js/category.js"></script>
+    <body>
+        <h2>Меню</h2>
+        <ul>
+            <li>
+                <a href="/">Домой</a>
+            </li>
+            {% for category in categories %}
+            <li>
+                <a href="/categories/?id={{ category.id }}" link="{{ category.id }}" class="category-link">{{ category.name }}</a>
+            </li>
+            {% endfor %}
+
+            {% if login %}
+            <li>
+                <a href="/user/?id={{ login.id }}">Кабинет</a>
+            </li>
+            <li>
+                <a href="/user/?id={{ login.id }}&action=logout">Выход</a>
+            </li>
+            {% else %}
+            <li>
+                <a href="/user/?action=login">Вход</a>
+            </li>
+            {% endif %}
+        </ul>
+
+
+

@@ -1,4 +1,19 @@
 {%include 'header.html'%}
-User Page
+<div id="catalog-data">
+    {% if not content_data.orders%}
+    Нет заказов
+    {% else %}
+    <h2>Заказы</h2>
+    <ul id="ordersList">
+        {% for order in content_data.orders %}
+        <li id="order{{ order.id }}" data-id="{{ order.id }}" data-element="Order">
+            Номер {{ order.order_number }}, Статус <span id="status{{ order.id }}">{{ order.status }}</span>
+            <button class="order-btn" data-action="del" >Удалить</button>
+            <button class="order-btn" data-action="pay">Оплатить</button>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>
 
 {%include 'footer.html'%}

@@ -19,19 +19,14 @@ class db
     /*
      * Запрещаем копировать объект
      */
-    private function __construct() {}
-    private function __sleep() {}
-    private function __wakeup() {}
-    private function __clone() {}
-
-    /*
-     * Выполняем соединение с базой данных
-     */
-    public function Connect($user, $password, $base, $host = 'localhost', $port = 3306)
-    {
+    private function __construct() {
         // Формируем строку соединения с сервером
-        $connectString = 'mysql:host=' . $host . ';port= ' . $port . ';dbname=' . $base . ';charset=UTF8;';
-        $this->db = new PDO($connectString, $user, $password,
+        $connectString = 'mysql'
+            . ':host=' . Config::get('db_host')
+            . ';port=' . Config::get('db_port')
+            . ';dbname=' . Config::get('db_base')
+            . ';charset='. Config::get('db_charset') .';';
+        $this->db = new PDO($connectString, Config::get('db_user'), Config::get('db_password'),
             [
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, // возвращать ассоциативные массивы
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION // возвращать Exception в случае ошибки
@@ -39,26 +34,112 @@ class db
         );
     }
 
-    /*
-     * Выполнить запрос к БД
-     */
-    public function Query($query, $params = array())
-    {
+    private function __sleep() {}
+    private function __wakeup() {}
+    private function __clone() {}
 
-        $res = $this->db->prepare($query);
-        $res->execute($params);
-        return $res;
+    private function makeWhere($where) {
+        if (empty($where)) {
+            return '';
+        }
+        $whereSets = [];
+        foreach ($where as $key => $value) {
+            $whereSets[] = $key . '=\'' . $value . '\'';
+        }
+
+        return ' WHERE ' . implode(' AND ', $whereSets);
     }
 
-    /*
-     * Выполнить запрос с выборкой данных
-     */
-    public function Select($query, $params = array())
-    {
-        $result = $this->Query($query, $params);
-        if ($result) {
-            return $result->fetchAll();
+    private function makeSelect($select) {
+        if (empty($select)) {
+            return '*';
         }
+
+        return implode(',', $select);
+    }
+
+    public function Select($table, $select = [], $where = []) {
+
+        $query = 'SELECT ' . $this->makeSelect($select) . ' FROM ' . $table . $this->makeWhere($where);
+
+        $q = $this->db->prepare($query);
+        $q->execute();
+
+        if ($q->errorCode() != PDO::ERR_NONE) {
+            $info = $q->errorInfo();
+            Logger::Write($info[2]);
+            return false;
+        }
+
+        if (empty($where)) {
+            return $q->fetchAll();
+        } else {
+            return $q->fetch();
+        }
+    }
+
+    public function Insert($table, $object) {
+        foreach ($object as $key => $value) {
+            if ($value === NULL) {
+                $object[$key] = 'NULL';
+            }
+        }
+        $keys = array_keys($object);
+        $columns = implode(',', $keys);
+        $masks = ':' . implode(',:', $keys);
+
+        $query = "INSERT INTO $table ($columns) VALUES ($masks)";
+
+        $q = $this->db->prepare($query);
+        $q->execute($object);
+
+        if ($q->errorCode() != PDO::ERR_NONE) {
+            $info = $q->errorInfo();
+            Logger::Write($info[2]);
+            return false;
+        }
+
+        return $this->db->lastInsertId();
+    }
+
+    public function Update($table, $object, $where) {
+        $sets = array();
+
+        foreach ($object as $key => $value) {
+            $sets[] = "$key=:$key";
+            if ($value === NULL) {
+                $object[$key] = 'NULL';
+            }
+        }
+
+        $sets_s = implode(',',$sets);
+        $query = "UPDATE $table SET $sets_s" . $this->makeWhere($where);
+
+        $q = $this->db->prepare($query);
+        $q->execute($object);
+
+        if ($q->errorCode() != PDO::ERR_NONE) {
+            $info = $q->errorInfo();
+            Logger::Write($info[2]);
+            return false;
+        }
+
+        return $q->rowCount();
+    }
+
+    public function Delete($table, $where) {
+
+        $query = "DELETE FROM $table WHERE $where";
+        $q = $this->db->prepare($query);
+        $q->execute();
+
+        if ($q->errorCode() != PDO::ERR_NONE) {
+            $info = $q->errorInfo();
+            Logger::Write($info[2]);
+            return false;
+        }
+
+        return $q->rowCount();
     }
 }
 ?>

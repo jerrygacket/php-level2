@@ -3,7 +3,8 @@ $config['db_user'] = 'maria';
 $config['db_password'] = 'maria';
 $config['db_base'] = 'shop2';
 $config['db_host'] = 'localhost';
-$config['db_charset'] = 'UTF-8';
+$config['db_charset'] = 'UTF8';
+$config['db_port'] = '3306';
 
 $config['path_root'] = __DIR__;
 $config['path_public'] = $config['path_root'] . '/../public';
@@ -22,3 +23,5 @@ $config['path_logs'] = $config['path_root'] . '/../logs';
 $config['sitename'] = 'Интернет-магазин';
 
 $config['salt2'] = 'awOIHO@EN@Oine q2enq2kbkb';
+
+$config['admins'] = ['1'];

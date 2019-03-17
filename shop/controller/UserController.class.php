@@ -26,8 +26,10 @@ class UserController extends Controller
             } else {
                 header('Location: /user/?action=login');
             }
-        } elseif (!User::alreadyLoggedIn()) {
-                header('Location: /user/?action=login');
+        } elseif (User::alreadyLoggedIn()) {
+            $result['orders'] = Order::getOrders();
+        } else {
+            header('Location: /user/?action=login');
         }
 
         return $result;

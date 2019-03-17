@@ -1,11 +1,18 @@
 <?php
 
-class App 
+class App
 {
     public static function Init()
     {
         date_default_timezone_set('Europe/Moscow');
-        db::getInstance()->Connect(Config::get('db_user'), Config::get('db_password'), Config::get('db_base'));
+        //db::getInstance()->Connect(Config::get('db_user'), Config::get('db_password'), Config::get('db_base'));
+        if (isset($_POST['asAjax']) && $_POST['asAjax']) {
+            $controllerName = ucfirst($_POST['element']) . 'Controller';
+            $methodName = isset($_POST['action']) ? $_POST['action'] : 'index';
+            $controller = new $controllerName();
+            echo json_encode(['result' => $controller->$methodName($_POST)]);
+            return true;
+        }
 
         if (php_sapi_name() !== 'cli' && isset($_SERVER) && isset($_GET)) {
             self::web(isset($_GET['path']) ? $_GET['path'] : '');
@@ -15,9 +22,6 @@ class App
     protected static function web($url)
     {
         $url = explode("/", $url);
-        // заменил isset($url[0]) на !empty($url[0])
-        // т.к. explode возвращает Array ( [0] => ) при пустом $url
-        // и isset($url[0]) всегда true
         if (!empty($url[0])) {
             $_GET['page'] = $url[0];
             if (isset($url[1])) {

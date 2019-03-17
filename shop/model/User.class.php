@@ -28,6 +28,7 @@ class User extends Model {
                 'id' => $_SESSION['user']['id_user'],
             ];
         }
+
         return $result;
     }
 
@@ -50,11 +51,12 @@ class User extends Model {
         }
         // получаем данные пользователя по id
         $user_data = db::getInstance()->Select(
-            'SELECT id_user, user_name, user_password FROM `shop_users` WHERE id_user = :user_id',
+            'shop_users',
+            ['id_user', 'user_name', 'user_password'],
             ['user_id' => $_COOKIE['id_user']]);
 
-        if (($user_data[0]['user_password'] == $_COOKIE['cookie_hash'])
-            && ($user_data[0]['id_user'] == $_COOKIE['id_user'])
+        if (($user_data['user_password'] == $_COOKIE['cookie_hash'])
+            && ($user_data['id_user'] == $_COOKIE['id_user'])
         ) {
             return true;
         }
@@ -67,29 +69,29 @@ class User extends Model {
     /**
      * авторизация через логин и пароль
      */
-    public static function authWithCredentials()
-    {
+    public static function authWithCredentials() {
         $username = trim($_POST['login']);
         $password = trim($_POST['password']);
 
         // получаем данные пользователя по логину
         $user_data = db::getInstance()->Select(
-            'SELECT id_user, user_name, user_password FROM `shop_users` WHERE user_login = :user_login',
+            'shop_users',
+            ['id_user', 'user_name', 'user_password'],
             ['user_login' => $username]);
         // проверяем соответствие логина и пароля
-        if ($user_data && count($user_data) == 1) {
-            if (password_verify($password,$user_data[0]['user_password'])) {
+        if ($user_data) {
+//            if (password_verify($password,$user_data['user_password'])) {
+            if ($password == $user_data['user_password']) {
                 // если стояла галка, то запоминаем пользователя на сутки
                 if (isset($_POST['rememberme']) && $_POST['rememberme'] == 'on') {
-                    setcookie("id_user", $user_data[0]['id_user'], time() + 86400);
-                    setcookie("cookie_hash", $user_data[0]['user_password'], time() + 86400);
+                    setcookie("id_user", $user_data['id_user'], time() + 86400);
+                    setcookie("cookie_hash", $user_data['user_password'], time() + 86400);
                 }
 
-                $_SESSION['user'] = $user_data[0];
+                $_SESSION['user'] = $user_data;
                 return true;
             }
         }
-
         return false;
     }
 }

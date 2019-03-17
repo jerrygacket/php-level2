@@ -19,4 +19,19 @@ class Order extends Model {
             'type' => 'float'
         ];
     }
+
+    public static function getOrders($orderId = 0) {
+        $where = [];
+        if ($orderId > 0) {
+            $where = ['id' => $orderId];
+        }
+        $orders = db::getInstance()->Select(
+            'orders',[],$where);
+        return $orders;
+    }
+
+    public static function changeStatus($orderId, $newStatus) {
+        return db::getInstance()->Update(
+            'orders', ['status' => $newStatus], ['id' => $orderId]);
+    }
 }

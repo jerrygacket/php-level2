@@ -36,7 +36,7 @@ function content_579d03a3eb5305_27506467 ($_smarty_tpl) {
     <body>
         <ul>
             <?php
-$_from = $_smarty_tpl->tpl_vars['categories']->value;
+$_from = $_smarty_tpl->tpl_vars['catalog']->value;
 if (!is_array($_from) && !is_object($_from)) {
 settype($_from, 'array');
 }

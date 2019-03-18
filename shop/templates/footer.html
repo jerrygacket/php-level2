@@ -1,4 +1,4 @@
-{% if login %}
+{% if login.login %}
     <h3>Просмотренные страницы</h3>
     {% if pages %}
     <ul>
@@ -12,5 +12,19 @@
 {% else %}
 <h3>Вход не выполнен, просмотренные страницы не сохраняются</h3>
 {% endif %}
+<footer>
+    <section class="u-py-40 bg-navy-dark">
+        <div class="container">
+            <p class="mb-0 text-center">
+                &copy; 2013 — {{ "now"|date('Y') }} Все права защищены
+            </p>
+        </div>
+    </section>
+</footer>
+<script src="assets/js/bundle.js"></script>
+<script src="assets/js/fury.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script src="js/category.js"></script>
 </body>
 </html>

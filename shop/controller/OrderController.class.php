@@ -2,7 +2,7 @@
 class OrderController extends Controller
 {
 
-    public $view = 'categories';
+    public $view = 'catalog';
 
     public function index($data)
     {

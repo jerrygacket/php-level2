@@ -1,4 +1,5 @@
 {%include 'header.html'%}
+{% include 'topbanner.html' %}
 <h2>Вход</h2>
 <p class="text-red">{{ content_data.authError }}</p>
 <form method="POST" action="/user/?action=login">

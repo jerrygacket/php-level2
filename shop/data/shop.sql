@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `categories`
+-- Структура таблицы `catalog`
 --
 
 CREATE TABLE `categories` (
@@ -34,7 +34,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Дамп данных таблицы `categories`
+-- Дамп данных таблицы `catalog`
 --
 
 INSERT INTO `categories` (`id`, `name`, `parent_id`, `status`) VALUES
@@ -310,7 +310,7 @@ INSERT INTO `user_role` (`id`, `id_user`, `id_role`) VALUES
 --
 
 --
--- Индексы таблицы `categories`
+-- Индексы таблицы `catalog`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
@@ -396,7 +396,7 @@ ALTER TABLE `user_role`
 --
 
 --
--- AUTO_INCREMENT для таблицы `categories`
+-- AUTO_INCREMENT для таблицы `catalog`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;

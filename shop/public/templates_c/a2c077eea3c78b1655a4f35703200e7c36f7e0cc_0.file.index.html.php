@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 3.1.29, created on 2016-07-30 22:41:03
-  from "/media/sf_src/templates/categories/index.html" */
+  from "/media/sf_src/templates/catalog/index.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
@@ -10,7 +10,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
     'a2c077eea3c78b1655a4f35703200e7c36f7e0cc' => 
     array (
-      0 => '/media/sf_src/templates/categories/index.html',
+      0 => '/media/sf_src/templates/catalog/index.html',
       1 => 1469907404,
       2 => 'file',
     ),

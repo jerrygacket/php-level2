@@ -20,8 +20,9 @@ $config['path_templates'] = $config['path_root'] . '/../templates';
 
 $config['path_logs'] = $config['path_root'] . '/../logs';
 
-$config['sitename'] = 'Интернет-магазин';
+$config['site'] = [
+    'name' => 'Интернет-магазин',
+    'root' => '/',
+    ];
 
 $config['salt2'] = 'awOIHO@EN@Oine q2enq2kbkb';
-
-$config['admins'] = ['1'];

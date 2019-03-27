@@ -2,7 +2,7 @@
 class OrderController extends Controller
 {
 
-    public $view = 'categories';
+    public $view = 'catalog';
 
     public function index($data)
     {
@@ -12,7 +12,7 @@ class OrderController extends Controller
     public function pay($data)
     {
         if (Order::changeStatus($data['id'], 2)) {
-            return Order::getOrders($data['id']);
+            return ['status' => Order::getStatus($data['id']), 'id' => $data['id']];
         }
 
         return false;
@@ -21,7 +21,7 @@ class OrderController extends Controller
     public function del($data)
     {
         if (Order::changeStatus($data['id'], 4)) {
-            return Order::getOrders($data['id']);
+            return ['status' => Order::getStatus($data['id']), 'id' => $data['id']];
         }
 
         return false;

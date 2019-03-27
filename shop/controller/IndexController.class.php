@@ -3,13 +3,11 @@
 class IndexController extends Controller
 {
     public $view = 'index';
-    public $title;
 
-    function __construct()
+    public function index($data)
     {
-        parent::__construct();
-        $this->title .= ' | Главная';
+        $goods = Good::getMany(isset($data['id']) ? $data['id'] : 0);
+
+        return ['goods' => $goods];
     }
-
-
 }

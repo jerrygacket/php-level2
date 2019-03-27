@@ -1,0 +1,99 @@
+{% include 'header.html' %}
+{% include 'topbanner.html' %}
+<section class="pt-0">
+    <div class="container" id="cart">
+        {% if content_data.newOrder|length > 0 %}
+            {% if content_data.newOrder.newUser == true %}
+                <h3>Создан новый пользователь</h3>
+                Логин {{ content_data.newOrder.user.user_login }}<br>
+                Пароль {{ content_data.newOrder.user.user_password }}
+            {% endif %}
+        <h3>Создан новый заказ на сумму {{ content_data.newOrder.cost }}</h3>
+        {% elseif content_data.cart.goods|length > 0 %}
+            <h2>Товары</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Картинка</th>
+                    <th scope="col">Название</th>
+                    <th scope="col">Количество</th>
+                    <th scope="col">Цена</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in content_data.cart.goods %}
+                    <tr id="good_row{{item.id}}">
+                        <th scope="row">{{ loop.index }}</th>
+                        <td><a href="/goods/?id={{ item.id }}"><img src="{{ item.imgsmall }}" alt="{{ item.name }}" style="max-width: 100px;" class="product-img"></a></td>
+                        <td>{{ item.name }}</td>
+                        <td><input type="number" min="1" id="good_count{{item.id}}" value="{{ item.count }}" style="margin: 20px;" onchange="cartSet('{{item.id}}')"/></td>
+                        <td>{{ item.price }}</td>
+                        <td>
+                            <button class="btn btn-rounded btn-danger" onclick="cartDel('{{item.id}}')">
+                                Удалить
+                            </button>
+                        </td>
+                    </tr>
+                {% endfor %}
+                    <tr>
+                        <th scope="row"></th>
+                        <td colspan="2">Итого</td>
+                        <td id="cart_count">{{content_data.cart.count}}</td>
+                        <td id="cart_cost">{{content_data.cart.cost}}</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Оформить заказ</h2>
+            <form method="POST" action="/cart/?action=newOrder">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="input-group u-rounded-50 border u-of-hidden u-mb-20">
+                            <div class="input-group-addon bg-white border-0 pl-4 pr-0">
+                                <span class="icon icon-User text-primary"></span>
+                            </div>
+                            <input type="text" class="form-control border-0 p-3" placeholder="Your name" name="name" value="{{content_data.user.user_name}}" required>
+                        </div>
+
+                        <div class="input-group u-rounded-50 border u-of-hidden u-mb-20">
+                            <div class="input-group-addon bg-white border-0 pl-4 pr-0">
+                                <span class="icon icon-Mail text-primary"></span>
+                            </div>
+                            <input type="text" class="form-control border-0 p-3" placeholder="Your email" name="email" value="{{content_data.user.user_email}}" required>
+                        </div>
+
+                        <div class="input-group u-rounded-50 border u-of-hidden u-mb-20">
+                            <div class="input-group-addon bg-white border-0 pl-4 pr-0">
+                                <span class="icon icon-Pointer text-primary"></span>
+                            </div>
+                            <input type="text" class="form-control border-0 p-3" placeholder="Your address" name="address" value="{{content_data.user.user_address}}" required>
+                        </div>
+
+                        <div class="input-group u-rounded-50 border u-of-hidden u-mb-20">
+                            <div class="input-group-addon bg-white border-0 pl-4 pr-0">
+                                <span class="icon icon-Phone2 text-primary"></span>
+                            </div>
+                            <input type="text" class="form-control border-0 p-3" placeholder="Your phone" name="phone" value="{{content_data.user.user_phone}}" required>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group u-rounded-50 border u-of-hidden u-mb-20">
+                            <div class="input-group-addon bg-white border-0 pl-4 pr-0">
+                                <span class="icon icon-Message text-primary"></span>
+                            </div>
+                            <textarea rows="8" class="form-control border-0 p-3" placeholder="Comments" name="comment"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit"  class="btn btn-primary btn-rounded u-mt-20 u-w-170">
+                    Заказать
+                </button>
+            </form>
+        {% else %}
+        Корзина пуста
+        {% endif %}
+    </div>
+</section>
+{% include 'footer.html' %}

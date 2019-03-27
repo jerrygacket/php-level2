@@ -5,7 +5,7 @@ class AdminController extends Controller
     protected $controls = [
         'pages' => 'Page',
         'orders' => 'Order',
-        'categories' => 'Category',
+        'categories' => 'Categories',
         'goods' => 'Good'
     ];
 
@@ -13,11 +13,21 @@ class AdminController extends Controller
     
     public function index($data)
     {
-        return ['controls' => $this->controls];
+        $id = (User::alreadyLoggedIn()['id'] ?? 0);
+        if (User::isAdmin($id)) {
+            return ['controls' => $this->controls];
+        }
+
+        header('Location: /');
     }
 
     public function control($data)
     {
+        $id = (User::alreadyLoggedIn()['id'] ?? 0);
+        if (!User::isAdmin($id)) {
+            header('Location: /');
+            return false;
+        }
         // Сохранение
         $actionId = $this->getActionId($data);
         if ($actionId['action'] === 'save') {
@@ -59,15 +69,15 @@ class AdminController extends Controller
                 foreach ($fields as $field => $value) {
                     $query .= $field . ' = "' . $value . '",';
                 }
-                $query = substr($query, 0, -1) . ' WHERE id = :id';
-                db::getInstance()->Query($query, ['id' => $actionId['id']]);
+                $query = substr($query, 0, -1) . ' WHERE id = '.$actionId['id'];
+                db::getInstance()->Query($query);
                 break;
             case 'delete':
-                db::getInstance()->Query('UPDATE ' . $data['id'] . ' SET status=:status WHERE id = :id', ['id' => $actionId['id'], 'status' => Status::Deleted]);
+                db::getInstance()->Query('UPDATE ' . $data['id'] . ' SET status=4 WHERE id = '.$actionId['id']);
                 break;
         }
-        $fields = db::getInstance()->Select('desc ' . $data['id']);
-        $_items = db::getInstance()->Select('select * from ' . $data['id']);
+        $fields = db::getInstance()->Select($data['id']);
+        $_items = db::getInstance()->Select($data['id']);
 /* не понятно зачем это?
         $items = [];
         foreach ($_items as $item) {

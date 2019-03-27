@@ -1,0 +1,2 @@
+0000000000000000000000000000000000000000 a4c6be90b73f50dff4c2ffd854e0e82bab0f3f4c user <user@bigone> 1551902964 +0300	branch: Created from lesson3
+a4c6be90b73f50dff4c2ffd854e0e82bab0f3f4c 25146fa105e7d1ec9cdeb5662aeac5aefc90e6d9 user <user@bigone> 1551903007 +0300	commit: Вынес Генератор шаблонов в отдельный класс, чтобы не дублировать при обработке GET и POST запросов.

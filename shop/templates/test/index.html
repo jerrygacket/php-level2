@@ -1,0 +1,11 @@
+{%include 'header.html'%}
+{% include 'topbanner.html' %}
+<section>
+    <div class="container">
+        {% for moduleName,module in content_data %}
+        <h2>Тест модуля {{ moduleName }}</h2>
+        <p>{{ module | raw }}</p>
+        {% endfor %}
+    </div>
+</section>
+{% include 'footer.html' %}

@@ -12,8 +12,10 @@ function gbStandardAutoload($className)
         'data/migrate',
         'lib',
         'lib/smarty',
+        'lib/vendor',
         'lib/commands',
-        'model/'
+        'model/',
+        'tests/',
     ];
     $found = false;
     foreach ($dirs as $dir) {

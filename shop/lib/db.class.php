@@ -58,6 +58,34 @@ class db
         return implode(',', $select);
     }
 
+    public function Query($query) {
+
+        $q = $this->db->prepare($query);
+        $q->execute();
+
+        if ($q->errorCode() != PDO::ERR_NONE) {
+            $info = $q->errorInfo();
+            Logger::Write($info[2]);
+            return false;
+        }
+
+        return $q->fetch();
+    }
+
+    public function QueryAll($query) {
+
+        $q = $this->db->prepare($query);
+        $q->execute();
+
+        if ($q->errorCode() != PDO::ERR_NONE) {
+            $info = $q->errorInfo();
+            Logger::Write($info[2]);
+            return false;
+        }
+
+        return $q->fetchAll();
+    }
+
     public function Select($table, $select = [], $where = []) {
 
         $query = 'SELECT ' . $this->makeSelect($select) . ' FROM ' . $table . $this->makeWhere($where);
@@ -78,6 +106,22 @@ class db
         }
     }
 
+    public function SelectMany($table, $select = [], $where = []) {
+
+        $query = 'SELECT ' . $this->makeSelect($select) . ' FROM ' . $table . $this->makeWhere($where);
+
+        $q = $this->db->prepare($query);
+        $q->execute();
+
+        if ($q->errorCode() != PDO::ERR_NONE) {
+            $info = $q->errorInfo();
+            Logger::Write($info[2]);
+            return false;
+        }
+
+        return $q->fetchAll();
+    }
+
     public function Insert($table, $object) {
         foreach ($object as $key => $value) {
             if ($value === NULL) {
@@ -95,6 +139,7 @@ class db
 
         if ($q->errorCode() != PDO::ERR_NONE) {
             $info = $q->errorInfo();
+            print_r($info);
             Logger::Write($info[2]);
             return false;
         }

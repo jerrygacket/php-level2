@@ -1,19 +1,51 @@
 {%include 'header.html'%}
+{% include 'topbanner.html' %}
+<section>
+    <div class="container">
 <div id="catalog-data">
     {% if not content_data.orders%}
     Нет заказов
     {% else %}
     <h2>Заказы</h2>
     <ul id="ordersList">
-        {% for order in content_data.orders %}
-        <li id="order{{ order.id }}" data-id="{{ order.id }}" data-element="Order">
-            Номер {{ order.order_number }}, Статус <span id="status{{ order.id }}">{{ order.status }}</span>
-            <button class="order-btn" data-action="del" >Удалить</button>
-            <button class="order-btn" data-action="pay">Оплатить</button>
+        {% for id,order in content_data.orders %}
+        <li id="order{{ id }}" data-id="{{ id }}" data-element="Order">
+            Заказ ID {{ id }} на сумму {{ order.cost }}, Статус: <span id="status{{ id }}">{{ order.status }}</span><br>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse{{ id }}" aria-expanded="false" aria-controls="#collapse{{ id }}">
+                Товары
+            </button>
+            <button class="order-btn btn btn-danger btn-rounded u-mt-20 u-w-170" data-action="del" >Удалить</button>
+            <button class="order-btn btn btn-success btn-rounded u-mt-20 u-w-170" data-action="pay">Оплатить</button>
+            <div class="collapse" id="collapse{{ id }}">
+                <div class="card card-body">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">Название</th>
+                            <th scope="col">Количество</th>
+                            <th scope="col">Цена</th>
+                            <th scope="col">Стоимость</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for goodid,good in order.goods %}
+                            <tr>
+                                <td><a href="/goods/?id={{ goodid }}" class="btn btn-link">{{ good.name }}</a></td>
+                                <td>{{ good.count }}</td>
+                                <td>{{ good.price }}</td>
+                                <td>{{ good.cost }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </li>
         {% endfor %}
     </ul>
     {% endif %}
 </div>
+    </div>
+</section>
 
 {%include 'footer.html'%}

@@ -1,0 +1,27 @@
+{% include 'header.html' %}
+<div id="catalog-data">
+    {% if not content_data.subcategories%}
+    Нет подкатегорий
+    {% else %}
+    <h2>Подкатегории</h2>
+    <ul>
+        {% for subcategory in content_data.subcategories %}
+        <li><a href="/catalog/?id={{ subcategory.id }}">{{ subcategory.name }}</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+
+<div id="goods-data">
+    {% if not content_data.goods%}
+    Нет товаров
+    {% else %}
+    <h2>Товары</h2>
+    <ul>
+        {% for good in content_data.goods %}
+        <li><a href="/goods/?id={{ good.id }}">{{ good.name }}</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+{% include 'footer.html' %}

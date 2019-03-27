@@ -1,3 +1,28 @@
 {% include 'header.html' %}
-hello, people!
+{% include 'topbanner.html' %}
+<section class="pt-0">
+    <div class="container">
+        {% if content_data.goods|length > 0 %}
+        <div id="catalog" class="catalog-row row">
+            {% for item in content_data.goods %}
+            <div class="catalog-item col-4">
+                <div class="catalog-img" style="margin-top:50px;">
+                    <a href="/goods/?id={{ item.id }}"><img src="{{ item.imgsmall }}" alt="{{ item.name }}" style="max-width: 100px;" class="product-img"></a>
+                </div>
+                <div>Название: {{ item.name }}<br>
+                    Просмотров: {{ item.views }}
+                </div>
+                <div>
+                    <input type="hidden" id="good_count{{item.id}}" value="1"/>
+                    <button class="btn btn-rounded btn-primary" onclick="cartAdd('{{item.id}}')">
+                        Добавить в корзину
+                    </button>
+                </div>
+            </div>
+            {% endfor %}
+            <div id="lastIndex" style="display:none">3</div>
+        </div>
+        {% endif %}
+    </div>
+</section>
 {% include 'footer.html' %}

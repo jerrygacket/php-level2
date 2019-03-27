@@ -62,6 +62,7 @@ $(document).on('click', '.order-btn', function(){
     {
         // Здесь мы получаем данные, отправленные сервером и выводим их на экран.
         console.log(data);
+        console.log('dddd');
         var arr = JSON.parse(data);
         // alert(arr.message);
         if (arr.result) {

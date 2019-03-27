@@ -42,22 +42,25 @@ class App
             self::setNewPage();
             $controllerName = ucfirst($_GET['page']) . 'Controller';
             $methodName = isset($_GET['action']) ? $_GET['action'] : 'index';
-            $controller = new $controllerName();
+            $controller = new $controllerName(strtolower($_GET['page']));
             $data = [
                 'content_data' => $controller->$methodName($_GET),
-                'title' => $controller->title,
-                'categories' => Category::getCategories(0),
-                'login' => User::alreadyLoggedIn(),
+                'page' => $controller->getPageInfo(),
+                'login' => User::checkLogin(),
                 'pages' => self::getPages(),
+                'site' => Config::get('site'),
+                'goods_count' => Cart::getMiniCart(),
             ];
-            $view = $controller->view . '/' . $methodName . '.html';
+            if (isset($data['content_data']['newView'])) {
+                $view = $controller->view . '/' . $data['content_data']['newView'] . '.html';
+            } else {
+                $view = $controller->view . '/' . $methodName . '.html';
+            }
             if (!isset($_GET['asAjax'])) {
                 $loader = new \Twig\Loader\FilesystemLoader(Config::get('path_templates'));
                 $twig = new \Twig\Environment($loader);
                 $template = $twig->loadTemplate($view);
                 echo $template->render($data);
-            } else {
-                echo json_encode($data);
             }
         }
     }

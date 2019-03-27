@@ -1,7 +1,7 @@
 <?php
 $config['db_user'] = 'maria';
-$config['db_password'] = 'p0linom';
-$config['db_base'] = 'shop';
+$config['db_password'] = 'maria';
+$config['db_base'] = 'shop2';
 $config['db_host'] = 'localhost';
 $config['db_charset'] = 'UTF8';
 $config['db_port'] = '3306';
@@ -20,8 +20,9 @@ $config['path_templates'] = $config['path_root'] . '/../templates';
 
 $config['path_logs'] = $config['path_root'] . '/../logs';
 
-$config['sitename'] = 'Интернет-магазин';
+$config['site'] = [
+    'name' => 'Интернет-магазин',
+    'root' => '/',
+    ];
 
 $config['salt2'] = 'awOIHO@EN@Oine q2enq2kbkb';
-
-$config['admins'] = ['1'];

@@ -12,6 +12,7 @@ function gbStandardAutoload($className)
         'data/migrate',
         'lib',
         'lib/smarty',
+        'lib/vendor',
         'lib/commands',
         'model/'
     ];

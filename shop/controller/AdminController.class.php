@@ -5,7 +5,7 @@ class AdminController extends Controller
     protected $controls = [
         'pages' => 'Page',
         'orders' => 'Order',
-        'categories' => 'Category',
+        'catalog' => 'Category',
         'goods' => 'Good'
     ];
 
@@ -13,11 +13,21 @@ class AdminController extends Controller
     
     public function index($data)
     {
-        return ['controls' => $this->controls];
+        $id = (User::alreadyLoggedIn()['id'] ?? 0);
+        if (User::isAdmin($id)) {
+            return ['controls' => $this->controls];
+        }
+
+        header('Location: /');
     }
 
     public function control($data)
     {
+        $id = (User::alreadyLoggedIn()['id'] ?? 0);
+        if (!User::isAdmin($id)) {
+            header('Location: /');
+            return false;
+        }
         // Сохранение
         $actionId = $this->getActionId($data);
         if ($actionId['action'] === 'save') {

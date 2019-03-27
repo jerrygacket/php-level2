@@ -18,7 +18,7 @@ class Category extends Model {
     public static function getCategories($parentId = 0)
     {
         return db::getInstance()->Select(
-            'categories',
+            self::$table,
             ['id', 'name'],
             ['status' => Status::Active, 'parent_id' => $parentId]
         );

@@ -23,11 +23,18 @@ class Good extends Model {
         ];
     }
 
-    public static function getGoods($categoryId)
-    {
-        return db::getInstance()->Select(
-            'goods',
-            ['id', 'id_category', '`name`', 'price'],
-            ['status' => Status::Active, 'id_category' => $categoryId]);
+    public static function getMany($id = 0) {
+        $where = $id == 0 ? [] : ['id' => $id , 'status' => Status::Active];
+        return db::getInstance()->SelectMany(
+            self::$table,
+            [],
+            $where);
+    }
+
+    public static function getOne($id) {
+        $sql = 'SELECT goods.*,fabric.name as fabric,paint.name as paint FROM goods join fabric on fabric.id=goods.fabricid join paint on paint.id=goods.paintid WHERE goods.id='.$id;
+        $result = db::getInstance()->Query($sql);
+
+        return $result;
     }
 }

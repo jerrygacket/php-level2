@@ -1,33 +1,96 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>{{ title }}</title>
-        <base href="/" >
-    </head>
-    <body>
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-    <script src="js/category.js"></script>
-        <h2>Меню</h2>
-        <ul>
-            <li>
-                <a href="/">Домой</a>
-            </li>
-            {% for category in categories %}
-            <li>
-                <a href="/categories/?id={{ category.id }}" link="{{ category.id }}" class="category-link">{{ category.name }}</a>
-            </li>
-            {% endfor %}
+<html lang="ru">
+<head>
 
-            {% if login %}
-            <li>
-                <a href="/user/?id={{ login.id }}">Кабинет</a>
-            </li>
-            <li>
-                <a href="/user/?id={{ login.id }}&action=logout">Выход</a>
-            </li>
-            {% else %}
-            <li>
-                <a href="/user/?action=login">Вход</a>
-            </li>
-            {% endif %}
-        </ul>
+    <meta charset="UTF-8">
+    <title>
+        {% if page.title|length >0 %}
+            {{ page.title }}
+        {% else %}
+            {{ site.name}}
+        {% endif %}
+
+    </title>
+    <base href="{{ site.root }}">
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!--Favicon-->
+    <link rel="icon" href="assets/img/favicon/144x144.png">
+
+    <!--Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,600,700%7COpen+Sans:400,600,700" rel="stylesheet">
+
+    <!--Icon fonts-->
+    <link rel="stylesheet" href="assets/vendor/strokegap/style.css">
+    <link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/vendor/linearicons/style.css">
+
+    <!-- Stylesheet-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="assets/css/bundle.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="header header-shrink header-inverse fixed-top">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg px-md-0">
+            <a class="navbar-brand" href="{{ site.root }}">
+				<span class="logo-default">
+					<img src="assets/img/logo-default.png" alt="">
+				</span>
+                <span class="logo-inverse">
+					<img src="assets/img/logo-inverse.png" alt="">
+				</span>
+            </a>
+
+            <button class="navbar-toggler p-0" data-toggle="collapse" data-target="#navbarNav">
+                <div class="hamburger hamburger--spin js-hamburger">
+                    <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                    </div>
+                </div>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ site.root }}">
+                            Главная
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contacts/">
+                            Контакты
+                        </a>
+                    </li>
+                    {% if login.login %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/">
+                            Кабинет
+                        </a>
+                    </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cart/">
+                            Корзина (<span id="goods_count">
+                            {% if goods_count > 0 %}
+                            {{ goods_count }}
+                            {% else %}
+                            0
+                            {% endif %}
+                            </span>)
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/?action={{ login.link }}">
+                            {{ login.text }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div> <!-- END container-->
+</header>

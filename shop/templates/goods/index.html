@@ -1,0 +1,45 @@
+{% include 'header.html' %}
+<section class="u-flex-center" style="
+background: #FC5C7D;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #6A82FB, #FC5C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 u-mt-80 text-center">
+                <h1 class="display-4 u-fw-600 text-white u-mb-40">
+                    {{ content_data.oneItem.name }}
+                </h1>
+                <p class="u-fs-22 text-white u-lh-1_8 u-mb-40">
+                    {{ content_data.oneItem.intro }}
+                </p>
+            </div> <!-- END col-lg-6-->
+        </div> <!-- END row-->
+    </div> <!-- END container-->
+</section>
+<section id="about">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <a href="{{content_data.oneItem.img}}" target="_blank"><img src="{{content_data.oneItem.img}}" alt="{{content_data.oneItem.name}}" class="product-img"></a>
+            </div>
+            <div class="col-lg-6 ml-auto">
+                <p class="my-3">
+                    Просмотров: {{ content_data.oneItem.views }}
+                </p>
+                <ul class="list-unstyled u-fw-600 u-lh-2 mt-4 mb-5">
+                    <li><i class="fa fa-check text-primary mr-2"></i>Размер: {{content_data.oneItem.size}} </li>
+                    <li><i class="fa fa-check text-primary mr-2"></i>Ткань: {{content_data.oneItem.fabric}} </li>
+                    <li><i class="fa fa-check text-primary mr-2"></i>Краска: {{content_data.oneItem.paint}} </li>
+                </ul>
+                <div>
+                    <input type="number" min="1" id="good_count{{content_data.oneItem.id}}" value="1" style="margin: 20px;"/>
+                    <button class="btn btn-rounded btn-primary" onclick="cartAdd('{{content_data.oneItem.id}}')">
+                        Добавить в корзину
+                    </button>
+                </div>
+            </div>  <!-- END col-lg-6-->
+        </div><!--END row-->
+    </div> <!-- END container-->
+</section>
+{% include 'footer.html' %}

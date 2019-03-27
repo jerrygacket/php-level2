@@ -15,4 +15,11 @@ class Page extends Model {
             'size' => 512
         ];
     }
+
+    public static function getPageInfo($name = 'index') {
+        return db::getInstance()->Select(
+            self::$table,
+            ['title', 'description'],
+            ['name' => $name]);
+    }
 }

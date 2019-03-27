@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:3306
--- Время создания: Мар 14 2019 г., 12:27
+-- Время создания: Мар 18 2019 г., 09:12
 -- Версия сервера: 10.1.37-MariaDB-0+deb9u1
 -- Версия PHP: 7.0.33-0+deb9u3
 
@@ -138,7 +138,7 @@ CREATE TABLE `goods` (
   `paintid` int(11) NOT NULL,
   `views` int(11) NOT NULL DEFAULT '0',
   `price` decimal(20,0) NOT NULL,
-  `status` varchar(16) NOT NULL,
+  `status` int(11) NOT NULL,
   `article` varchar(16) NOT NULL,
   `id_category` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -148,12 +148,12 @@ CREATE TABLE `goods` (
 --
 
 INSERT INTO `goods` (`id`, `name`, `img`, `imgsmall`, `imgbig`, `intro`, `description`, `size`, `fabricid`, `paintid`, `views`, `price`, `status`, `article`, `id_category`) VALUES
-(1, 'Подушка декоративная большая', 'products/product1/product1.jpg', 'products/product1/small/product1.jpg', 'products/product1/big/product1.jpg', 'Краткое описание Подушки декоративной большой', 'Мягкий лен Lorem ipsum dolor sit amet. Лебяжий пух Lorem ipsum dolor sit amet.', '60х60 см', 1, 1, 71, '100', 'удален', '', 1),
-(2, 'Подушка декоративная маленькая', 'products/product2/product2.jpg', 'products/product2/small/product2.jpg', 'products/product2/big/product2.jpg', 'Краткое описание Подушки декоративной маленькой', 'Мягкий лен Lorem ipsum dolor sit amet. Лебяжий пух Lorem ipsum dolor sit amet.', '30х30 см', 1, 1, 18, '54', '', '', 2),
-(3, 'Подушка декоративная прямоугольная', 'products/product3/product3.jpg', 'products/product3/small/product3.jpg', 'products/product3/big/product3.jpg', 'Краткое описание Подушки декоративной прямоугольной', 'Мягкий лен Lorem ipsum dolor sit amet. Лебяжий пух Lorem ipsum dolor sit amet.', '30х90 см', 2, 1, 3, '75', '', '', 2),
-(4, 'strings of code', '', '', '', '', '', '', 0, 0, 0, '16', '', '43-7559', 3),
-(5, 'test strings', '', '', '', '', '', '', 0, 0, 0, '0', '', '', 1),
-(6, 'little soft pillow', '', '', '', '', '', '', 0, 0, 0, '56', '', '45-7889', 3);
+(1, 'Подушка декоративная большая', 'products/product1/product1.jpg', 'products/product1/small/product1.jpg', 'products/product1/big/product1.jpg', 'Краткое описание Подушки декоративной большой', 'Мягкий лен Lorem ipsum dolor sit amet. Лебяжий пух Lorem ipsum dolor sit amet.', '60х60 см', 1, 1, 71, '100', 1, '', 1),
+(2, 'Подушка декоративная маленькая', 'products/product2/product2.jpg', 'products/product2/small/product2.jpg', 'products/product2/big/product2.jpg', 'Краткое описание Подушки декоративной маленькой', 'Мягкий лен Lorem ipsum dolor sit amet. Лебяжий пух Lorem ipsum dolor sit amet.', '30х30 см', 1, 1, 18, '54', 1, '', 2),
+(3, 'Подушка декоративная прямоугольная', 'products/product3/product3.jpg', 'products/product3/small/product3.jpg', 'products/product3/big/product3.jpg', 'Краткое описание Подушки декоративной прямоугольной', 'Мягкий лен Lorem ipsum dolor sit amet. Лебяжий пух Lorem ipsum dolor sit amet.', '30х90 см', 2, 1, 3, '75', 1, '', 2),
+(4, 'strings of code', '', '', '', '', '', '', 0, 0, 0, '16', 1, '43-7559', 3),
+(5, 'test strings', '', '', '', '', '', '', 0, 0, 0, '0', 1, '', 1),
+(6, 'little soft pillow', '', '', '', '', '', '', 0, 0, 0, '56', 1, '45-7889', 3);
 
 -- --------------------------------------------------------
 
@@ -177,7 +177,7 @@ CREATE TABLE `orders` (
 INSERT INTO `orders` (`id`, `order_number`, `user_id`, `comment`, `order_date`, `status`) VALUES
 (1, '0', 1, 'fgdfg gdfgd fgdfg', '2019-02-16', 2),
 (16, '1550320437', 34, '', '2019-02-16', 2),
-(17, '1550320726', 34, '', '2019-02-16', 4),
+(17, '1550320726', 34, '', '2019-02-16', 2),
 (18, '1550565988', 34, 'отменен', '2019-02-16', 4);
 
 -- --------------------------------------------------------
@@ -223,6 +223,30 @@ INSERT INTO `order_status` (`id`, `status`) VALUES
 (2, 'Оплачен'),
 (3, 'Доставлен'),
 (4, 'Отменен');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `pages`
+--
+
+CREATE TABLE `pages` (
+  `id` int(11) NOT NULL,
+  `name` varchar(256) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `description` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп данных таблицы `pages`
+--
+
+INSERT INTO `pages` (`id`, `name`, `title`, `description`) VALUES
+(1, 'index', 'Главная', 'Мы что-то продаем'),
+(2, 'about', '', ''),
+(3, 'contacts', 'Контакты', 'Что-то о контактах'),
+(4, 'user', 'Пользователь', 'описание страницы пользователя'),
+(5, 'goods', 'Товар', 'Что-то про товар');
 
 -- --------------------------------------------------------
 
@@ -283,6 +307,8 @@ CREATE TABLE `shop_users` (
 
 INSERT INTO `shop_users` (`id_user`, `user_name`, `user_login`, `user_password`, `last_login`) VALUES
 (1, 'admin', 'admin', '12345', '0000-00-00'),
+(2, 'user2', 'user2', '$2y$10$RzsB9yAIsszWANAk4KKUoutVCw2Z8rFjmdS.MRu36GAxjsQ/TlhjS', '0000-00-00'),
+(11, 'user3', 'user3', '$2y$10$vqgBo6Esa9Ht2sh1CHeMuuxmS7Mt/BE.ivPqY1RaUVwlcvp7mFeLq', '0000-00-00'),
 (34, 'user1', 'user@xz.xz3', '12345', '0000-00-00');
 
 -- --------------------------------------------------------
@@ -303,7 +329,9 @@ CREATE TABLE `user_role` (
 
 INSERT INTO `user_role` (`id`, `id_user`, `id_role`) VALUES
 (1, 1, 1),
-(2, 34, 2);
+(2, 34, 2),
+(3, 2, 1),
+(4, 11, 2);
 
 --
 -- Индексы сохранённых таблиц
@@ -366,6 +394,12 @@ ALTER TABLE `order_status`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `pages`
+--
+ALTER TABLE `pages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `paint`
 --
 ALTER TABLE `paint`
@@ -399,7 +433,7 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT для таблицы `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT для таблицы `fabric`
 --
@@ -419,7 +453,7 @@ ALTER TABLE `gallery`
 -- AUTO_INCREMENT для таблицы `goods`
 --
 ALTER TABLE `goods`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2159;
 --
 -- AUTO_INCREMENT для таблицы `orders`
 --
@@ -454,7 +488,7 @@ ALTER TABLE `shop_users`
 -- AUTO_INCREMENT для таблицы `user_role`
 --
 ALTER TABLE `user_role`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --

@@ -20,13 +20,12 @@ class Order extends Model {
         ];
     }
 
-    public static function getOrders($orderId = 0) {
-        $where = [];
-        if ($orderId > 0) {
-            $where = ['id' => $orderId];
-        }
-        $orders = db::getInstance()->Select(
-            'orders',[],$where);
+    public static function getOrders($userId = 0) {
+        $where = ['id_user' => $userId];
+        $userId == 0 ?
+            $orders = db::getInstance()->Select('orders') :
+            $orders = db::getInstance()->Select('orders',[],$where);
+
         return $orders;
     }
 

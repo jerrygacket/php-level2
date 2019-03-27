@@ -6,30 +6,16 @@ class UserController extends Controller
         'orders' => 'Order',
     ];
 
-    public $title;
     public $view = 'user';
-
-    function __construct()
-    {
-        parent::__construct();
-        $this->title .= ' | Пользователь';
-    }
     
     public function index($data) {
         $result = [];
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            if (User::authWithCredentials()) {
-                $result = [
-                    'controls' => $this->controls,
-                    'id' => $_SESSION['user']['id_user'],
-                ];
-            } else {
-                header('Location: /user/?action=login');
-            }
-        } elseif (User::alreadyLoggedIn()) {
-            $result['orders'] = Order::getOrders();
+        if ($id = User::alreadyLoggedIn()['id']) {
+            User::isAdmin($id) ?
+                $result['orders'] = Order::getOrders() :
+                $result['orders'] = Order::getOrders($id);
         } else {
-            header('Location: /user/?action=login');
+            $result['newView'] = 'login';
         }
 
         return $result;
@@ -40,10 +26,36 @@ class UserController extends Controller
             User::logOut();
         }
 
-        return [];
+        return ['newView' => 'login'];
     }
 
     public function login($data) {
+        $result = [];
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (!User::authWithCredentials()) {
+                $result['authError'] = 'Неверный логин или пароль';
+            }
+        }
+        if (User::alreadyLoggedIn()) {
+            $result['orders'] = Order::getOrders();
+            $result['newView'] = 'index';
+        }
 
+        return $result;
+    }
+
+    public function register($data) {
+        $result = [];
+        $result['newView'] = 'login';
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (!User::register()) {
+                $result['regError'] = 'Недопустимое имя пользователя и/или пароль';
+            } elseif (User::authWithCredentials($_POST['reglogin'], $_POST['regpassword'])) {
+                $result['orders'] = Order::getOrders();
+                $result['newView'] = 'index';
+            }
+        }
+
+        return $result;
     }
 }

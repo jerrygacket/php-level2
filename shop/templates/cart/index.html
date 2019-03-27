@@ -1,0 +1,46 @@
+{% include 'header.html' %}
+{% include 'topbanner.html' %}
+<section class="pt-0">
+    <div class="container">
+        {% if content_data.cart.goods|length > 0 %}
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Картинка</th>
+                    <th scope="col">Название</th>
+                    <th scope="col">Количество</th>
+                    <th scope="col">Цена</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in content_data.cart.goods %}
+                    <tr>
+                        <th scope="row">{{ loop.index }}</th>
+                        <td><a href="/goods/?id={{ item.id }}"><img src="{{ item.imgsmall }}" alt="{{ item.name }}" style="max-width: 100px;" class="product-img"></a></td>
+                        <td>{{ item.name }}</td>
+                        <td><input type="number" min="1" id="good_count{{item.id}}" value="{{ item.count }}" style="margin: 20px;"/></td>
+                        <td>{{ item.price }}</td>
+                        <td>
+                            <button class="btn btn-rounded btn-danger" onclick="cartDel('{{item.id}}')">
+                                Удалить
+                            </button>
+                        </td>
+                    </tr>
+                {% endfor %}
+                    <tr>
+                        <th scope="row"></th>
+                        <td colspan="2">Итого</td>
+                        <td>{{content_data.cart.count}}</td>
+                        <td>{{content_data.cart.cost}}</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        {% else %}
+        Корзина пуста
+        {% endif %}
+    </div>
+</section>
+{% include 'footer.html' %}
